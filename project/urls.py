@@ -17,3 +17,6 @@ urlpatterns = (
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 )
+
+
+#todo if we cant figure out how to override todo.urls, bring in urls.py from todo app and add todo/ to all paths
