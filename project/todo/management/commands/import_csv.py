@@ -4,7 +4,7 @@ from pathlib import Path
 
 from django.core.management.base import BaseCommand, CommandParser
 
-from todo.operations.csv_importer import CSVImporter
+from project.todo.operations.csv_importer import CSVImporter
 
 
 class Command(BaseCommand):

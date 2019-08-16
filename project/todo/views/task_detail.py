@@ -11,11 +11,11 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse
 
-from todo.defaults import defaults
-from todo.features import HAS_TASK_MERGE
-from todo.forms import AddEditTaskForm
-from todo.models import Attachment, Comment, Task
-from todo.utils import (
+from project.todo.defaults import defaults
+from project.todo.features import HAS_TASK_MERGE
+from project.todo.forms import AddEditTaskForm
+from project.todo.models import Attachment, Comment, Task
+from project.todo.utils import (
     send_email_to_thread_participants,
     staff_check,
     toggle_task_completed,

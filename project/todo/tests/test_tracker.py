@@ -2,8 +2,8 @@ import pytest
 
 from django.core import mail
 
-from todo.models import Task, Comment
-from todo.mail.consumers import tracker_consumer
+from project.todo.models import Task, Comment
+from project.todo.mail.consumers import tracker_consumer
 from email.message import EmailMessage
 
 

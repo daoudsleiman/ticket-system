@@ -5,7 +5,7 @@ from email.charset import Charset as EMailCharset
 from django.db import transaction
 from django.db.models import Count
 from html2text import html2text
-from todo.models import Comment, Task, TaskList
+from project.todo.models import Comment, Task, TaskList
 
 logger = logging.getLogger(__name__)
 

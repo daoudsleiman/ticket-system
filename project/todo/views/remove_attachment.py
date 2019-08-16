@@ -5,8 +5,8 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
 
-from todo.models import Attachment
-from todo.utils import remove_attachment_file
+from project.todo.models import Attachment
+from project.todo.utils import remove_attachment_file
 
 
 @login_required

@@ -4,8 +4,8 @@ from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 
-from todo.models import Task, TaskList
-from todo.utils import staff_check
+from project.todo.models import Task, TaskList
+from project.todo.utils import staff_check
 
 
 @login_required

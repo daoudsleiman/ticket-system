@@ -4,8 +4,8 @@ from pathlib import Path
 import pytest
 from django.contrib.auth import get_user_model
 
-from todo.models import Task, TaskList
-from todo.operations.csv_importer import CSVImporter
+from project.todo.models import Task, TaskList
+from project.todo.operations.csv_importer import CSVImporter
 
 
 """

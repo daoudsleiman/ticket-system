@@ -1,8 +1,8 @@
 from django.core import mail
 
-from todo.defaults import defaults
-from todo.models import Comment, Task
-from todo.utils import send_email_to_thread_participants, send_notify_mail
+from project.todo.defaults import defaults
+from project.todo.models import Comment, Task
+from project.todo.utils import send_email_to_thread_participants, send_notify_mail
 
 
 def test_send_notify_mail_not_me(todo_setup, django_user_model, email_backend_setup):

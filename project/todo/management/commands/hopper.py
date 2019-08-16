@@ -8,7 +8,7 @@ from django.contrib.auth.models import Group
 from django.contrib.auth import get_user_model
 from django.utils.text import slugify
 
-from todo.models import Task, TaskList
+from project.todo.models import Task, TaskList
 
 
 num_lists = 5

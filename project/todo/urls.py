@@ -1,8 +1,8 @@
 from django.conf import settings
 from django.urls import path
 
-from todo import views
-from todo.features import HAS_TASK_MERGE
+from project.todo import views
+from project.todo.features import HAS_TASK_MERGE
 
 app_name = "todo"
 
@@ -31,7 +31,7 @@ urlpatterns = [
 
 if HAS_TASK_MERGE:
     # ensure mail tracker autocomplete is optional
-    from todo.views.task_autocomplete import TaskAutocomplete
+    from project.todo.views.task_autocomplete import TaskAutocomplete
 
     urlpatterns.append(
         path(

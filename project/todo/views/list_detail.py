@@ -6,9 +6,9 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
-from todo.forms import AddEditTaskForm
-from todo.models import Task, TaskList
-from todo.utils import send_notify_mail, staff_check
+from project.todo.forms import AddEditTaskForm
+from project.todo.models import Task, TaskList
+from project.todo.utils import send_notify_mail, staff_check
 
 
 @login_required

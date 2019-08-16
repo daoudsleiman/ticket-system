@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
 from django.shortcuts import get_object_or_404
 from django.utils.decorators import method_decorator
-from todo.models import Task
-from todo.utils import user_can_read_task
+from project.todo.models import Task
+from project.todo.utils import user_can_read_task
 
 
 class TaskAutocomplete(autocomplete.Select2QuerySetView):

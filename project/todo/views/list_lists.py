@@ -5,9 +5,9 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from todo.forms import SearchForm
-from todo.models import Task, TaskList
-from todo.utils import staff_check
+from project.todo.forms import SearchForm
+from project.todo.models import Task, TaskList
+from project.todo.utils import staff_check
 
 
 @login_required

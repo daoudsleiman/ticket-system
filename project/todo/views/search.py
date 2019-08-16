@@ -3,8 +3,8 @@ from django.db.models import Q
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from todo.models import Task
-from todo.utils import staff_check
+from project.todo.models import Task
+from project.todo.utils import staff_check
 
 
 @login_required

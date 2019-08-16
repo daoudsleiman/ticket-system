@@ -6,8 +6,8 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.utils.text import slugify
 
-from todo.forms import AddTaskListForm
-from todo.utils import staff_check
+from project.todo.forms import AddTaskListForm
+from project.todo.utils import staff_check
 
 
 @login_required

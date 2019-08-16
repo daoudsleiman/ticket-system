@@ -4,7 +4,7 @@ import datetime
 from django.conf import settings
 from django.db import migrations, models
 import django.db.models.deletion
-import todo.models
+import project.todo.models
 
 
 class Migration(migrations.Migration):
@@ -28,7 +28,7 @@ class Migration(migrations.Migration):
                 (
                     "file",
                     models.FileField(
-                        max_length=255, upload_to=todo.models.get_attachment_upload_dir
+                        max_length=255, upload_to=project.todo.models.get_attachment_upload_dir
                     ),
                 ),
                 (

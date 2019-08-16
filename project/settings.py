@@ -3,7 +3,7 @@ import os
 
 from django.contrib.messages import constants as message_constants
 
-DEBUG = False
+DEBUG = True
 
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
@@ -57,7 +57,7 @@ INSTALLED_APPS = (
     "django.contrib.sessions",
     "django.contrib.sites",
     "django.contrib.staticfiles",
-    "todo",
+    "project.todo",
     "django_extensions",
 )
 

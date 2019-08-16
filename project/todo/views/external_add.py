@@ -8,10 +8,10 @@ from django.http import HttpResponse
 from django.shortcuts import redirect, render
 from django.template.loader import render_to_string
 
-from todo.defaults import defaults
-from todo.forms import AddExternalTaskForm
-from todo.models import TaskList
-from todo.utils import staff_check
+from project.todo.defaults import defaults
+from project.todo.forms import AddExternalTaskForm
+from project.todo.models import TaskList
+from project.todo.utils import staff_check
 
 
 @login_required

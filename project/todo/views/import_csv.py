@@ -3,8 +3,8 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 from django.http import HttpResponse
 from django.shortcuts import redirect, render, reverse
 
-from todo.operations.csv_importer import CSVImporter
-from todo.utils import staff_check
+from project.todo.operations.csv_importer import CSVImporter
+from project.todo.utils import staff_check
 
 
 @login_required

@@ -5,8 +5,8 @@ from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect
 from django.urls import reverse
 
-from todo.models import Task
-from todo.utils import staff_check
+from project.todo.models import Task
+from project.todo.utils import staff_check
 
 
 @login_required

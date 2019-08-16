@@ -6,7 +6,7 @@ import logging
 from django.contrib.auth import get_user_model
 from django.contrib.auth.models import Group
 
-from todo.models import Task, TaskList
+from project.todo.models import Task, TaskList
 
 log = logging.getLogger(__name__)
 

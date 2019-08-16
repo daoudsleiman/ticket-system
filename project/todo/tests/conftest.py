@@ -2,7 +2,7 @@ import pytest
 
 from django.contrib.auth.models import Group
 
-from todo.models import Task, TaskList
+from project.todo.models import Task, TaskList
 
 
 @pytest.fixture
