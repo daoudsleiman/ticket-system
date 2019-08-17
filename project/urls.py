@@ -13,11 +13,12 @@ urlpatterns = (
         path("logout", auth_views.LogoutView.as_view(), name="logout"),
         path("gtdadmin/", admin.site.urls),
         path("todo/", include(urls, namespace="todo")),
+        path("403/", TemplateView.as_view(template_name="403.html"), name="403"),
+        path("404/", TemplateView.as_view(template_name="404.html"), name="404"),
+        path("500/", TemplateView.as_view(template_name="500.html"), name="500"),
     ]
     # Static media in DEBUG mode:
     + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 )
 
-
-#todo if we cant figure out how to override todo.urls, bring in urls.py from todo app and add todo/ to all paths

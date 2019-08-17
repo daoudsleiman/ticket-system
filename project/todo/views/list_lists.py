@@ -8,8 +8,10 @@ from django.shortcuts import render
 from project.todo.forms import SearchForm
 from project.todo.models import Task, TaskList
 from project.todo.utils import staff_check
+from django.contrib.admin.views.decorators import staff_member_required
 
 
+@staff_member_required(redirect_field_name="", login_url="403")
 @login_required
 @user_passes_test(staff_check)
 def list_lists(request) -> HttpResponse:
