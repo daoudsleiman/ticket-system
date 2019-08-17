@@ -2,67 +2,54 @@
 
 {% block content %}
 
-  <h1>BinBubble Ticket System</h1>
+    {% if user.is_authenticated and user.is_staff %}
+        <h1>Welcome to the BinBubble, Employee.</h1>
+        <div id="widgetmain"
+             style="text-align:left;overflow-y:auto;overflow-x:hidden;width:200px;background-color:#transparent; border:1px solid #333333;">
+            <div id="rsswidget" style="height:500px;">
+                <iframe src="http://us1.rssfeedwidget.com/getrss.php?time=1566009974375&amp;x=http%3A%2F%2Frss.news.yahoo.com%2Frss%2Ftopstories&amp;w=200&amp;h=500&amp;bc=333333&amp;bw=1&amp;bgc=transparent&amp;m=20&amp;it=true&amp;t=(default)&amp;tc=333333&amp;ts=15&amp;tb=transparent&amp;il=true&amp;lc=0000FF&amp;ls=14&amp;lb=false&amp;id=true&amp;dc=333333&amp;ds=14&amp;idt=true&amp;dtc=284F2D&amp;dts=12"
+                        border="0" hspace="0" vspace="0" frameborder="no" marginwidth="0" marginheight="0"
+                        style="border:0; padding:0; margin:0; width:200px; height:500px;" id="rssOutput">Reading RSS
+                    Feed ...
+                </iframe>
+            </div>
+        </div>
+    {% else %}
+        <h1>Welcome to the BinBubble Ticket System!</h1>
 
-  <p>
-    django-todo is a
-    <i>pluggable</i>, multi-user, multi-group, multi-list todo and ticketing system - a reusable app designed to be dropped into any existing Django project. Users can create tasks for themselves or for others, or create Unassigned tasks that will be filed into a specific list (public tickets).
-  </p>
-
-  <p>
-      The fake content on this demo site is refreshed every few hours. Notice that you can only see or write to tasks in the Django group(s) you belong to.
-  </p>
-
-  <div class="card mt-4">
-      <div class="card-header">
-          <h5>
-            Demo user logins
-          </h5>
-      </div>
-      <div class="card-body">
         <p>
-          You can log into this demo site as one of several users, who have different permissions and group memberships.
+            You have been invited to file a ticket for your custom website. If you would like to file a ticket please
+            select the file ticket button from the top of the navigation panel.
         </p>
-        <ul>
-          <li>
-            To access todo lists for group Basket Weavers, log in as <code>user1</code> or <code>user2</code>
-          </li>
-        <li>
-          To access todo lists for group Scuba Divers, log in as <code>user3</code> or <code>user4</code>
-        </li>
-          <li>
-            To access all lists, and to be able to create new lists, login as user <code>staffer</code>
-          </li>
-          <li>
-              <b>The password for all demo users is <code>todo</code></b>
-          </li>
-        </ul>
-        <p>
-          {% if user.is_authenticated %}
-            You are already logged in.
-          {% else %}
-            <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
-          {% endif %}
-        </p>
-      </div>
-    </div>
 
+        <div class="card mt-4">
+            <div class="card-header">
+                <h5>
+                    Rules
+                </h5>
+            </div>
+            <div class="card-body">
+                <p>
+                    Please direct any questions to <a href="mailto:contactus@binbubble.com">contactus@binbubble.com</a>
+                </p>
+                <ul>
+                    <li>
+                        If you forgot your login information that was provided please direct your query with the project
+                        name to <a href="mailto:contactus@binbubble.com">contactus@binbubble.com</a>.
+                    </li>
+                    <li>
+                        Please allow up to 72hours during standard business hours to process a ticket.
+                    </li>
 
-  <p class="mt-3">
-    The demo site consists of two repos: <a href="https://github.com/shacker/gtd">GTD</a>, which is a basic Django site (the outer "shell"), which is a really a stand-in for <i>your</i> site, and the django-todo reusable app itself (<a href="https://github.com/shacker/django-todo">github</a>), which provides the main functionality.
-  </p>
-
-  <p>
-    django-todo ships with a set of Bootstrap templates, which extend your site's <code>base.html</code>. The templates can easily be overridden with your own layout and styling preferences (even ditching Boostrap altogether if you like).
-  </p>
-
-  <ul>
-    <li>
-      <a href="http://django-todo.readthedocs.io/">Full documentation</a> is at readthedocs
-    </li>
-    <li>
-        Code is <a href="https://github.com/shacker/django-todo">in the repo</a> (contributions welcome)
-      </li>
-  </ul>
-
+                </ul>
+                <p>
+                    {% if user.is_authenticated %}
+                        You are already logged in.
+                    {% else %}
+                        <a href="{% url 'login' %}" class="btn btn-primary">Log In</a>
+                    {% endif %}
+                </p>
+            </div>
+        </div>
+    {% endif %}
 {% endblock %}
