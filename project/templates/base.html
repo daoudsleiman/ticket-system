@@ -53,6 +53,7 @@
 
             <!--user is not staff and logged in-->
             {% if user.is_authenticated and not user.is_staff%}
+              <li class="nav-item"><a href="{% url 'todo:my_tickets' %}" class="nav-link">My Tasks</a></li>
               <li class="nav-item"><a href="{% url 'todo:external_add' %}" class="nav-link">File Ticket</a></li>
             {% endif %}
 

@@ -1,6 +1,7 @@
 import bleach
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.admin.views.decorators import staff_member_required
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
@@ -11,6 +12,7 @@ from project.todo.models import Task, TaskList
 from project.todo.utils import send_notify_mail, staff_check
 
 
+@staff_member_required(redirect_field_name="", login_url="403")
 @login_required
 @user_passes_test(staff_check)
 def list_detail(request, list_id=None, list_slug=None, view_completed=False) -> HttpResponse:

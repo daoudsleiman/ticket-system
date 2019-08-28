@@ -1,5 +1,6 @@
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.admin.views.decorators import staff_member_required
 from django.core.exceptions import PermissionDenied
 from django.db import IntegrityError
 from django.http import HttpResponse
@@ -10,6 +11,7 @@ from project.todo.forms import AddTaskListForm
 from project.todo.utils import staff_check
 
 
+@staff_member_required(redirect_field_name="", login_url="403")
 @login_required
 @user_passes_test(staff_check)
 def add_list(request) -> HttpResponse:

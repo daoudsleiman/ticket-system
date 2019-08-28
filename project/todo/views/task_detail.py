@@ -6,6 +6,7 @@ from django import forms
 from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required, user_passes_test
+from django.contrib.admin.views.decorators import staff_member_required
 from django.core.exceptions import PermissionDenied
 from django.http import HttpResponse
 from django.shortcuts import get_object_or_404, redirect, render
@@ -44,6 +45,7 @@ def handle_add_comment(request, task):
     messages.success(request, "Comment posted. Notification email sent to thread participants.")
 
 
+@staff_member_required(redirect_field_name="", login_url="403")
 @login_required
 @user_passes_test(staff_check)
 def task_detail(request, task_id: int) -> HttpResponse:
